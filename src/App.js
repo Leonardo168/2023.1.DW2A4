@@ -1,9 +1,19 @@
-import React from "react"
+import React, { useState } from "react"
+
+import './App.css'
 
 const App = () => {
-  const mensagem = 'Olá Mundo!'
+  // let message = 'Olá Mundo!'
+  const [message, setMessage] = useState('Olá Mundo!');
   
-  return<h1>{mensagem}</h1>
+  return (
+    <div>
+      <div className="container">{message}</div>
+      <button onClick={() => setMessage("Adeus Mundo!")}>
+        Mudar mensagem
+      </button>
+    </div>
+  );
 };
 
 export default App;
