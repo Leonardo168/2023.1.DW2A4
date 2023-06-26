@@ -11,8 +11,12 @@ const AddTask = ({handleTaskAddition}) => {
     };
 
     const handleAddTaskClick = () => {
-        handleTaskAddition(inputData);
+        if (inputData !==""){
+            handleTaskAddition(inputData);
         setInputData('');
+        } else {
+            alert('Você não pode adicionar uma tarefa sem título');
+        }
     };
 
     return (
@@ -22,6 +26,7 @@ const AddTask = ({handleTaskAddition}) => {
                 value={inputData}
                 className="add-task-input"
                 type="text"
+                name="titulo"
             />;
             <div className="add-task-button-container">
                 <Button onClick={handleAddTaskClick}>Adicionar</Button>
