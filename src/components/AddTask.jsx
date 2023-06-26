@@ -11,11 +11,11 @@ const AddTask = ({handleTaskAddition}) => {
     };
 
     const handleAddTaskClick = () => {
-        if (inputData !==""){
-            handleTaskAddition(inputData);
-        setInputData('');
-        } else {
+        if (inputData ===""){
             alert('Você não pode adicionar uma tarefa sem título');
+        } else {
+            handleTaskAddition(inputData);
+            setInputData('');
         }
     };
 
